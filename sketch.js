@@ -15,7 +15,7 @@ async function setup() {
 
   // Using webcam feed as video input, hiding html element to avoid duplicate with canvas
   video = createCapture(VIDEO);
-  video.size(width, height);
+  video.size(500, 500);
   video.hide();
 
   detector.detectStart(video, gotDetections);
@@ -29,7 +29,7 @@ function gotDetections(results) {
 
 function draw() {
   // Draw the current video frame onto the canvas.
-  image(video, 800, 800);
+  image(video, 0, 0);
 
   for (let i = 0; i < detections.length; i += 1) {
     let detection = detections[i];
