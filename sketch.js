@@ -11,7 +11,7 @@ let detections = [];
 async function setup() {
   detector = await ml5.objectDetection("cocossd");
 
-  createCanvas(640, 480);
+  createCanvas(800, 800);
 
   // Using webcam feed as video input, hiding html element to avoid duplicate with canvas
   video = createCapture(VIDEO);
@@ -29,7 +29,7 @@ function gotDetections(results) {
 
 function draw() {
   // Draw the current video frame onto the canvas.
-  image(video, 0, 0);
+  image(video, 800, 800);
 
   for (let i = 0; i < detections.length; i += 1) {
     let detection = detections[i];
